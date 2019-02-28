@@ -1,0 +1,4 @@
+.npm-global/
+node_modules/
+coverage/
+.nyc_output/

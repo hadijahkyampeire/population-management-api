@@ -1,0 +1,35 @@
+{
+  "name": "population-management-api",
+  "version": "1.0.0",
+  "description": "Population Management System that contains a list of locations and the total number of residents in each location broken down by gender.",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --detectOpenHandles",
+    "start": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hadijahkyampeire/population-management-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hadijahkyampeire/population-management-api/issues"
+  },
+  "homepage": "https://github.com/hadijahkyampeire/population-management-api#readme",
+  "dependencies": {
+    "mongoose": "^5.4.16",
+    "bcrypt": "^3.0.4",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-async-handler": "^1.1.4",
+    "indicative": "^5.0.8",
+    "jsonwebtoken": "^8.5.0",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "jest": "^24.1.0",
+    "nodemon": "^1.18.10"
+  }
+}
