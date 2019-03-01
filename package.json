@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "jest --detectOpenHandles",
-    "start": "nodemon"
+    "start:dev": "nodemon"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,8 @@
     "express-async-handler": "^1.1.4",
     "indicative": "^5.0.8",
     "jsonwebtoken": "^8.5.0",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "supertest": "^3.3.0"
   },
   "devDependencies": {
     "jest": "^24.1.0",

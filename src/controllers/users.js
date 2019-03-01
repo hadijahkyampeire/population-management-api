@@ -5,10 +5,10 @@ const { rule } = require('indicative');
 var bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-const makeValidationRules = (emailRule) => {
+const makeValidationRules = emailRule => {
   const commonRules = {
     username: 'required|min:3|max:15',
-    password: 'required|min:6',
+    password: 'required|min:6'
   };
   commonRules.email = emailRule;
   return commonRules;
@@ -17,10 +17,7 @@ const makeValidationRules = (emailRule) => {
 module.exports = {
   // signup a user
   async signup(req, res, next) {
-    const data = await validate(
-      req,
-      makeValidationRules(emailRule.concat(rule('unique', User))),
-    );
+    const data = await validate(req, makeValidationRules(emailRule.concat(rule('unique', User))));
 
     user = await User.create(data);
     return res.status(201).send({ user, message: 'User created successfully' });
@@ -29,7 +26,7 @@ module.exports = {
   async login(req, res) {
     const { email, password } = await validate(req, {
       email: emailRule,
-      password: 'required|min:6',
+      password: 'required|min:6'
     });
     const user = await User.findOne({ email });
 
@@ -37,14 +34,15 @@ module.exports = {
       const { email, _id: user_id } = user;
       const payload = {
         email,
-        user_id,
+        user_id
       };
+      const token = jwt.sign({ payload }, process.env.SECRET, { expiresIn: 86400 });
       return res.send({
         message: 'You successfully loggedin',
-        token: jwt.sign({ payload }, process.env.SECRET, { expiresIn: 86400 }),
+        access_token: token
       });
     }
 
     return res.status(401).send({ error: 'Incorrect email or password' });
-  },
+  }
 };

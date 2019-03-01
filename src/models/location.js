@@ -7,10 +7,7 @@ var locationSchema = mongoose.Schema({
   parent_locationId: { type: String, required: false },
   created: { type: Date, default: Date.now }
 });
-//get a single location
-// locationSchema.static('getLocationById', function(id, callback) {
-//   Location.findById(id, callback);
-// });
+
 
 locationSchema.static('getSingleForUser', function(filters = {}) {
   return this.findOne({
