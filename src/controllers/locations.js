@@ -85,8 +85,8 @@ module.exports = {
     if (!location) {
       return res.status(400).json({ error: "location doesn't exist" });
     }
-    await Location.delete(location);
+    await Location.deleteOne(location);
 
     return res.json({ message: 'location was deleted successfully' });
-  },
+  }
 };

@@ -21,14 +21,6 @@ describe('Users', () => {
       .end(done);
   });
 
-  // test('post api/v1/login succes', done => {
-  //   agent
-  //     .post('/api/v1/login')
-  //     .send({ email: 'hard@gmail.com', password: 'secret' })
-  //     .expect(200)
-  //     .end(done);
-  // });
-
   test('post api/v1/login throws a 401 exception for wrong email and password', done => {
     agent
       .post('/api/v1/login')

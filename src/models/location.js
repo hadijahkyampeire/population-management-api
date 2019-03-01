@@ -21,7 +21,7 @@ locationSchema.static('getAllForLocation', function(id) {
   });
 });
 
-locationSchema.post('delete', async function(next) {
+locationSchema.post('remove', async function(next) {
   //listen for when a location is deleted and remove it if its a parent of another location
   await Location.deleteMany({ id: _id });
   await Location.updateMany({ parent_locationId: null });
