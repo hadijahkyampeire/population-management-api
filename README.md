@@ -5,7 +5,7 @@
 
 ## Documentation
 
-- Find the live documentation [Here](https://documenter.getpostman.com/view/2646235/S11GTLmL)
+- Find the live documentation [Here](https://documenter.getpostman.com/view/2646235/S11KRKKx#cb636acb-5e0a-46e2-b5f3-54f857c2a79c)
 
 ## About the API
 
